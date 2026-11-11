@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Student Attendance Calculator</h1>
+        <p>Manage your attendance smartly</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard Summary -->
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Subjects</h3>
+                <h2 id="totalSubjects">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Final Overall Attendance</h3>
+                <h2 id="overallAttendance">0%</h2>
+
+                <p id="overallStatus" class="status">
+                    No attendance data
+                </p>
+
+                <p id="overallDetails">
+                    Present: 0 | Absent: 0 | Total: 0
+                </p>
+
+                <p id="overallAdvice"></p>
+            </div>
+
+            <div class="card">
+                <h3>Overall Target</h3>
+                <h2 id="targetDisplay">75%</h2>
+            </div>
+
+        </section>
+
+        <!-- Overall Attendance Settings -->
+        <section class="panel">
+
+            <h2>Overall Attendance Settings</h2>
+
+            <label for="overallTarget">
+                Overall Attendance Target (%)
+            </label>
+
+            <input
+                type="number"
+                id="overallTarget"
+                min="1"
+                max="99"
+                value="75"
+            >
+
+            <p>Set your overall college attendance target.</p>
+
+        </section>
+
+        <!-- Add Subject -->
+        <section class="panel">
+
+            <h2>Add New Subject</h2>
+
+            <form id="subjectForm">
+
+                <label for="subjectName">
+                    Subject Name
+                </label>
+
+                <input
+                    type="text"
+                    id="subjectName"
+                    placeholder="e.g. Data Structure"
+                    required
+                >
+
+                <label for="totalClasses">
+                    Total Classes
+                </label>
+
+                <input
+                    type="number"
+                    id="totalClasses"
+                    placeholder="Enter total classes"
+                    min="1"
+                    required
+                >
+
+                <label for="presentClasses">
+                    Present Classes
+                </label>
+
+                <input
+                    type="number"
+                    id="presentClasses"
+                    placeholder="Enter present classes"
+                    min="0"
+                    required
+                >
+
+                <label for="subjectTarget">
+                    Subject Attendance Target (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="subjectTarget"
+                    min="1"
+                    max="99"
+                    value="75"
+                    required
+                >
+
+                <button type="submit" id="submitBtn">
+                    Add Subject
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="secondary hidden"
+                >
+                    Cancel Edit
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Subject List -->
+        <section class="panel">
+
+            <h2>My Subjects</h2>
+
+            <div id="subjectList">
+
+                <p class="empty">
+                    No subjects added yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Student Attendance Calculator | Made with Azam ❤️
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
